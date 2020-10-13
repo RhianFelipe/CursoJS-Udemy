@@ -1,65 +1,29 @@
-'use strict';
+#include < stdio.h >
 
-function triggerMblockEvent(miner) {
-	let event = new CustomEvent('minerBlocked', {
-		detail: {
-			minerUrl: miner
-		}
-	});
-	document.dispatchEvent(event);
-}
+	int main(void)
+{
+	int D, M, A;
 
-setTimeout(function() {
-	for(let name in this) {
+	scanf("%i",& D);
+	scanf("%i",& M);
+	scanf("%i",& A);
 
-		if(name === 'webkitStorageInfo') {
-			continue;
-		}
+	if (D < 30) {
+		D += 1;
 
-		try {
-
-			// Check CoinHive like miners
-			if(	this[name]
-				&& typeof this[name] !== 'undefined'
-				&& typeof this[name].isRunning === 'function'
-				&& typeof this[name].stop === 'function'
-				&& (typeof this[name]._siteKey === 'string' || typeof this[name]._newSiteKey === 'string' || typeof this[name]._address === 'string')
-				) {
-				console.log('[+] Coinhive miner found, stopping...');
-				this[name].stop();
-				this[name] = null;
-				triggerMblockEvent('CoinHive (inline)');
-			}
-
-			// Check Mineralt miners
-			if( this[name]
-				&& typeof this[name] !== 'undefined'
-				&& typeof this[name].db === 'function'
-				&& typeof this[name].getlf === 'function'
-				&& typeof this[name].stop === 'function'
-				&& typeof this[name].hps === 'function'
-				&& typeof this[name].hps() === 'number'
-				) {
-				console.log('[+] Mineralt miner found, stopping...');
-				this[name].stop();
-				this[name] = null;
-				triggerMblockEvent('Mineralt (inline)');
-			}
-
-			// Check Webminerpool miners
-			if( this[name]
-				&& typeof this[name] !== 'undefined'
-				&& typeof this[name].addWorker === 'function'
-				&& typeof this[name].startMining === 'function'
-				&& typeof this[name].stopMining === 'function'
-				&& typeof this[name].totalhashes === 'number'
-				) {
-				console.log('[+] Webminerpool miner found, stopping...');
-				this[name].stopMining();
-				this[name] = null;
-				triggerMblockEvent('Webminerpool (inline)');
-			}
-
-		} catch(mberr) {}
+	} else {
+		D = 1;
+		M += 1;
 	}
-}, 2000);
+
+	if (D < 10 && M < 10) {
+		printf("0%i/0%i/%i\n", D, M, A);
+	} else if (D < 10) {
+		printf("0%i/%i/%i\n", D, M, A);
+	} else {
+		printf("%i/0%i/%i\n", D, M, A);
+	}
+
+
+	return 0;
+}
