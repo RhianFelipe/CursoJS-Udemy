@@ -1,4 +1,4 @@
-let valor = 1 //nãi inicializada,mas declarada
+let valor = 1 //não inicializada,mas declarada
 console.log(valor)
 
 valor = null //ausência de valor,caso queira zerar um valor de uma variavel use o null 

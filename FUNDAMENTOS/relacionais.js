@@ -1,5 +1,5 @@
-console.log('01)' , '1' == 1)
-console.log('02)','1'=== 1)
+console.log('01)' , '1' == 1) // igual ==
+console.log('02)','1'=== 1) // restritamente igual ===
 console.log('03)', '3' != 3)
 console.log('04)', '3' !== 3)
 
@@ -15,4 +15,4 @@ console.log('10)', d1 == d2 )
 console.log('11)', d1.getTime() === d2.getTime())
 
 console.log('12)', undefined == null)
-console.log('13)', undefined === null)
+console.log('13)', undefined === null) // 

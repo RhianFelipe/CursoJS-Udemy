@@ -1,3 +1,6 @@
+
+
+
 const prod1 = {}
 prod1.nome = 'Celular Ultra Mega Brabo'
 prod1.preco = 454

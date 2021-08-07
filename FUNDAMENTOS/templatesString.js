@@ -2,8 +2,12 @@ const nome = 'Rebeca'
 const concatenacao = 'Ola ' + nome + '!'
 const template = ` 
        Olá 
-       ${nome}!`
+       ${nome}!
        
+    
+       
+       `
+    
    console.log(concatenacao , template)
    
    //expressoes...

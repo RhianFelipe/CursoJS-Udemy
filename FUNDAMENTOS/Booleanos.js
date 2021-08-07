@@ -26,7 +26,7 @@ console.log('Os falsos...')
 console.log(!!0)
 console.log(!!'')
 console.log(!!null)
-console.log(!!NaN)
+console.log(!!NaN) //n
 console.log(!!undefined)
 console.log(!!(isAtivo = false))
 

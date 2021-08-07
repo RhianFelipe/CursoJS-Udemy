@@ -12,5 +12,5 @@ function teste() {
     console.log(local)
 }
 teste()
-console.log(local)
+ console.log(local)
 
